@@ -4,6 +4,7 @@
 
 void init_led(void){
     init_spi();
+    DDR_LATCH |= (1 << LATCH);
 }
 
 void send_set(const led_disp_data_t* data){
