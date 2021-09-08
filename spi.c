@@ -8,7 +8,7 @@ void init_spi(void){
 
 void send_byte(uint8_t byte){
     for(uint8_t i = 0; i < 8; ++i){
-        _delay_us(2);
+        _delay_us(2.0);
         PORT_CLK |= (1 << CLK);
         
         if(byte & (1 << i)){
@@ -20,7 +20,7 @@ void send_byte(uint8_t byte){
             PORT_MOSI &= ~(1 << MOSI);
         }
 
-        _delay_us(2);
+        _delay_us(2.0);
         PORT_CLK &= ~(1 << CLK);
     }
 }

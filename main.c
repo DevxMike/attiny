@@ -13,7 +13,7 @@ int main(void){
 
     init_led();
     send_set(&data);
-    
+
     while(1){
 
     }
