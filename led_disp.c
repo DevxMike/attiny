@@ -1,6 +1,10 @@
 #include "led_disp.h"
 #include "spi.h"
 
+void init_led(void){
+    init_spi();
+}
+
 void send_set(const led_disp_data_t* data){
     send_byte(data->second);
     send_byte(data->first);

@@ -11,6 +11,7 @@ typedef struct{ //dane wysyłane do wyświetlacza
     uint8_t first, second; //pierwszy segment i drugi
 }led_disp_data_t;
 
+void init_led(void);
 void send_set(const led_disp_data_t* data);
 
 #endif
