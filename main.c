@@ -8,7 +8,12 @@ const uint8_t digits[] = {
 int main(void){
     led_disp_data_t data;
 
+    data.first = digits[1];
+    data.second = digits[2];
+
     init_led();
+    send_set(&data);
+    
     while(1){
 
     }
