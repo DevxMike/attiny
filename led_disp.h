@@ -3,6 +3,8 @@
 
 #include <avr/io.h>
 
+
+//LD (PB2)
 #define LATCH 2 
 #define PORT_LATCH PORTB
 #define DDR_LATCH DDRB
