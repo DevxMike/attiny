@@ -11,16 +11,24 @@ const uint8_t digits[] = {
 int main(void){
     led_disp_data_t data;
 
+    DDR_CLK |= (1 << CLK);
+    DDR_MOSI |= (1 << MOSI);
+    PORT_CLK &= ~(1 << CLK);
+
+    DDR_LATCH |= (1 << LATCH);
+    PORT_LATCH &= ~(1 << LATCH);
+
     data.first = digits[1];
     data.second = digits[2];
-
+    /*
     init_spi();
     init_led();
     _delay_ms(1);
+    */
 
-    send_set(&data);
 
     while(1){
-
+        send_set(&data);
+        _delay_ms(1000);
     }
 }
