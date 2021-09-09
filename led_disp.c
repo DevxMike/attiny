@@ -8,8 +8,8 @@ void init_led(void){
 }
 
 void send_set(const led_disp_data_t* data){
-    send_byte(data->second);
-    send_byte(data->first);
+    send_byte(~data->second);
+    send_byte(~data->first);
     
     _delay_us(1.0);
     PORT_LATCH |= (1 << LATCH); //wyłącz wyjścia rejestrów i przenieś zawartość rejestru przesuwnego do wyjść
